@@ -18,4 +18,8 @@ class Show < ActiveRecord::Base
   def self.ratings_sum
     Show.sum(:rating)
   end
+
+  def self.ratings_sum
+    Show.where("rating < 5")
+  end
 end
